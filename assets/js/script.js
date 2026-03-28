@@ -224,7 +224,6 @@ async function getProjectsGitHub() {
 
 
 formulario.addEventListener('submit', function(event) {
-    event.preventDefault()
 
     document.querySelectorAll('form span')
         .forEach((span) => (span.innerHTML = ''))
@@ -267,12 +266,15 @@ formulario.addEventListener('submit', function(event) {
         isValid = false
     }
 
-    if (isValid){
+    if (!isValid) {
+        // Se NÃO for válido, paramos o envio aqui
+        event.preventDefault();
+    } else {
+        // Se FOR válido, NÃO usamos event.preventDefault()
+        // Apenas mudamos o visual do botão e deixamos o HTML fazer o trabalho
         const submitButton = formulario.querySelector('button[type="submit"]');
         submitButton.disabled = true;
         submitButton.textContent = 'Enviando...';
-
-        formulario.submit();
     }
 })
 
