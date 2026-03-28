@@ -224,7 +224,6 @@ async function getProjectsGitHub() {
 
 
 formulario.addEventListener('submit', function(event) {
-    event.preventDefault();
     document.querySelectorAll('form span')
         .forEach(span => span.innerHTML = '');
 
@@ -272,6 +271,8 @@ formulario.addEventListener('submit', function(event) {
         submitButton.textContent = 'Enviando...';
 
         formulario.submit();
+    } else {
+        event.preventDefault(); // Só bloqueia se NÃO for válido
     }
 })
 
