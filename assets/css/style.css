@@ -262,7 +262,7 @@ header a:hover {
     display: flex;
     align-items: center;
     gap: var(--spacing-2xl);
-    margin: var(--spacing-2xl auto);
+    margin: var(--spacing-2xl) auto;
     border-radius: var(--radius-lg);
     background-color: var(--gray-200);
 }
@@ -399,6 +399,7 @@ header a:hover {
 }
 
 .project-content p {
+    flex: 1;
     margin-bottom: var(--spacing-sm);
     font-size: var(--text-base);
     color: var(--gray-400);
@@ -430,12 +431,13 @@ header a:hover {
 /* Swiper */
 
 .swiper-wrapper {
-    align-items: stretch;
+    display: flex;
+    align-items: stretch !important;
 }
  
 .swiper-slide {
     display: flex;
-    height: auto;
+    height: auto !important;
 }
  
 /* Botões do Swiper (navegação) */
@@ -540,7 +542,7 @@ form textarea {
     border-radius: var(--radius-md);
     font-family: inherit;
     font-size: var(--text-base);
-    transition: border-color 0.3 ease;
+    transition: border-color 0.3s ease;
 }
 
 form input:focus,
@@ -633,7 +635,7 @@ footer {
     
     /* Layout */
     .section-container{
-        padding: var(--spacing-LG) var(--spacing-md);
+        padding: var(--spacing-lg) var(--spacing-md);
     }
 
     /* Tipografia */
@@ -767,8 +769,8 @@ footer {
         align-items: center;
         height: auto;
     }
-    .swiper-nutton-next,
-    .swiper-nutton-prev {
+    .swiper-button-next,
+    .swiper-button-prev {
         display: none;
     }
 
@@ -980,7 +982,7 @@ footer {
     /* Success Page */
     .success-container {
         padding: var(--spacing-lg) var(--spacing-sm);
-        min-height: calc 100vh - 8rem;
+        min-height: calc (100vh - 8rem);
     }
     .success-content {
         gap: var(--spacing-md);
